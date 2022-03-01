@@ -53,11 +53,12 @@ def script():
     elif main=='2':
         print("1.For resizing png images")
         print("2.For resizing jpg images")
-        re = input("Enter choice for types of coversion(1/2):")
+        print("3.For resizing jpeg images")
+        re = input("Enter choice for types of coversion(1/2/3):")
         if re=='1':
             for file in glob.glob("*.png"):
                 print("Image selecetd is =",file)
-                choice = input("Enter choice for continuation(Y/N):")
+                choice = input("Enter the confirmation(Y/N):")
                 if choice=='Y':
                     im = Image.open(file)
                     w=int(input("enter the width :"))
@@ -70,7 +71,7 @@ def script():
         elif re=='2':
             for file in glob.glob("*.jpg"):
                 print("Image selecetd is =",file)
-                choice = input("Enter choice for continuation(Y/N):")
+                choice = input("Enter the confirmation(Y/N):")
                 if choice=='Y':
                     im = Image.open(file)
                     w=int(input("enter the width :"))
@@ -80,6 +81,19 @@ def script():
                     print("executed")
                 else:
                     print("Thank you")
+        elif re=='3':
+            for file in glob.glob("*.jpeg"):
+                print("Image selected is =",file)
+                choice = input("Enter the confirmation (Y/N) :")
+                if choice=='Y':
+                    im = Image.open(file)
+                    w=int(input("enter the width :"))
+                    h=int(input("enter the height :"))
+                    resized_img = im.resize((w,h))
+                    resized_img.save("copy.jpeg")
+                    print("executed")
+                else:
+                    print("Thank you for your confirmation")
         else:
             print("Undefined variable used")
     elif main=='3':
