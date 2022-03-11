@@ -2,7 +2,7 @@ from fileinput import filename
 from PIL import Image
 import glob
 def script():
-    print("Welcome to WIXERA-the image master")
+    print("Welcome to Converto the image Processor")
     print("1.Image converter")
     print("2.Image resizer")
     print("3.HELP ME")
